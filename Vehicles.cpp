@@ -72,7 +72,7 @@ public:
 class UnknownVehicle : public Vehicle {
 public:
     void printInfo() {
-        cout << "НЕИЗВЕСТНЫЙ ТИП ТРАНСПОРТА" << endl << endl;
+        cout << endl << "НЕИЗВЕСТНЫЙ ТИП ТРАНСПОРТА" << endl;
     }
 };
 
@@ -115,6 +115,8 @@ int main(int argc, char* argv[]){
         int tryConvert;                     // ковертация в int
         if (!(convert >> tryConvert))       //
             tryConvert = 4;                 // 4 - неизвестный тип траспорта
+        if (tryConvert < 0 || tryConvert > 4)
+            tryConvert = 4;
         types.push_back(tryConvert);
     }
 
